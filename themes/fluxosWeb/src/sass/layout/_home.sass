@@ -1,0 +1,238 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.banner-home
+    width: 100%
+    height: 100vh
+    background: $gray
+    .banner-container
+        .banner-header
+            width: 600px
+            padding: 40px
+            background: $fluxus_gray_dark
+            transform: translate(160px, 350px)
+            @include breakpoint($screen_1366)
+                transform: translate(160px, 150px)
+            @include breakpoint($screen_1200)
+                transform: translate(80px, 200px)
+            @include breakpoint($screen_912)
+                width: 95%
+                transform: translate(10px, 150px)
+            h1
+                color: $white
+                font-size: 2em
+                margin-bottom: 40px
+                &::first-letter
+                    text-transform: capitalize
+                @include breakpoint($screen_1366)
+                    font-size: 1.8em
+                @include breakpoint($screen_912)
+                    font-size: 1.5em
+                @include breakpoint($screen_600)
+                    font-size: 1.4em
+.category
+    width: 100%
+    padding-top: 75px
+    @include breakpoint($screen_1200)
+        padding-bottom: 25px
+    .category-container
+        gap: 20px
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        @include breakpoint($screen_1366)
+            justify-content: center
+        .category-content
+            padding: 20px
+            text-align: center
+            width: calc( 370px - 20px )
+            @include breakpoint($screen_912)
+                width: calc( 50% - 20px )
+            @include breakpoint($screen_600)
+                width: 100%
+            figure
+                width: 100%
+                height: 150px
+            h3
+                padding: 10px 0
+                margin-top: 10px
+                font-size: 1.6em
+                margin-bottom: 20px
+                @include breakpoint($screen_1366)
+                    font-size: 1.3em
+            p
+                font-size: 1.4em
+                padding-bottom: 20px
+                @include breakpoint($screen_1366)
+                    font-size: 1em
+.service
+    @extend .category
+    padding-top: 0
+    .service-container
+        @extend .category-container
+        .service-content
+            padding: 20px
+            width: calc( 25% - 20px )
+            border: 1px solid $fluxus_gray_dark
+            @include breakpoint($screen_1200)
+                width: calc( 30% - 20px )
+            @include breakpoint($screen_912)
+                width: calc( 50% - 20px )
+            @include breakpoint($screen_600)
+                width: 100%
+            figure
+                width: 100%
+                height: 225px
+                img
+                    object-fit: cover
+            header
+                width: 100%
+                text-align: center
+                position: relative
+                figure
+                    top: -120px
+                    position: absolute
+                    left: calc( 50% - 50px )
+                    @include round_content(100px, true)
+                    img
+                        @include round_content(100px, true)
+                h5
+                    font-size: 1.3em
+                    margin-top: 70px
+                    margin-bottom: 20px
+                    color: $fluxus_yellow
+                    text-transform: capitalize
+                p
+                    font-size: 1.2em
+        .ul-service
+            width: 100%
+            margin-top: 25px
+            margin-bottom: 100px
+            @extend .category-container
+            li
+                padding: 20px
+                font-size: 1.4em
+                text-align: center
+                @extend .service-content
+                @include breakpoint($screen_1366)
+                    font-size: 1.1em
+                    padding: 10px
+                a
+                    color: $fluxus_blue
+                    text-transform: capitalize
+.blog-top-views
+    background-color: $fluxus_blue
+    .blog-post
+        gap: 20px
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+        justify-content: space-between
+        @include breakpoint($screen_912)
+            padding-top: 50px
+            padding-bottom: 75px
+        .blog-content
+            margin: 270px 0
+            width: calc( 45% - 20px )
+            @include breakpoint($screen_1366)
+                margin: 150px 0
+            @include breakpoint($screen_912)
+                margin: 0
+                width: 100%
+                margin-right: 100px
+                @include breakpoint($screen_600)
+                    margin-right: 40px
+            h2
+                font-size: 2.5em
+                @include breakpoint($screen_912)
+                    font-size: 1.5em
+            p
+                margin: 15px 0
+                padding: 10px 0
+                font-size: 1.6em
+                @include breakpoint($screen_912)
+                    font-size: 1.2em
+        .blog-post-header
+            margin: 155px 0
+            width: calc( 55% - 20px )
+            @include breakpoint($screen_1366)
+                margin: 113px 0
+            @include breakpoint($screen_912)
+                margin: 0
+                width: 100%
+            figure
+                width: 100%
+                height: 600px
+                @include breakpoint($screen_1366)
+                    height: 500px
+                @include breakpoint($screen_912)
+                    height: 400px
+                @include breakpoint($screen_600)
+                    height: 360px
+                img
+                    object-fit: fill
+.about-home
+    width: 100%
+    text-align: center
+    padding-bottom: 50px
+    @include breakpoint($screen_1200)
+        padding-bottom: 25px
+    .box-about
+        padding: 0 300px
+        @include breakpoint($screen_1200)
+            padding: 100px
+        @include breakpoint($screen_912)
+            padding: 50px
+        @include breakpoint($screen_600)
+            padding: 20px
+        p
+            padding: 10px
+            margin: 20px 0
+            font-size: 1.2em
+            text-align: center
+.blog-home
+    width: 100%
+    .blog-home-container
+        gap: 20px
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+        justify-content: center
+    .blog-post
+        padding: 20px
+        width: calc( 350px - 20px )
+        border: 1px solid $fluxus_blue
+        @include breakpoint($screen_1200)
+            // width: calc( 500px - 20px )
+        @include breakpoint($screen_912)
+            width: calc( 50% - 20px )
+        @include breakpoint($screen_600)
+            width: 100%
+        .blog-post-header
+            width: 100%
+            height: 288px
+            figure
+                width: 100%
+                height: 100%
+                a
+                    width: 100%
+                    height: 100%
+                    img
+                        object-fit: fill
+        .blog-content
+            width: 100%
+            h2
+                margin-top: 15px
+                font-size: 1.4em
+                @include breakpoint($screen_1366)
+                    font-size: 1.3em
+                a
+                    color: $fluxus_blue
+            p
+                font-size: 1.2em
+                padding-top: 25px
+                a
+                    color: $fluxus_gray_dark

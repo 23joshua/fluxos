@@ -1,0 +1,8 @@
+.phpintel
+node_modules
+index.html
+shared
+service
+_routes.txt
+.gitattributes
+.ftp-deploy-sync-state.json

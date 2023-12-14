@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint'
+
+.footer
+    width: 100%
+    .header-home
+        width: 100%
+        padding: 10px 0
+        margin-top: 75px
+        @include breakpoint($screen_1200)
+            margin-top: 35px
+        h2
+            font-size: 3em
+            font-weight: 900
+            text-align: left
+            color: $fluxus_blue
+            text-transform: capitalize
+            @include breakpoint($screen_1366)
+                font-size: 2em
+    .footer-container
+        gap: 20px
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+        justify-content: flex-start
+        .ul-footer
+            width: 100%
+            li
+                padding: 10px 0
+                font-size: 1.2em
+                text-transform: capitalize
+        .footer-copyRight
+            width: 100%
+            font-weight: 900
+            padding: 20px 0
+            text-align: center
+            text-transform: capitalize
+            span
+                color: $fluxus_blue

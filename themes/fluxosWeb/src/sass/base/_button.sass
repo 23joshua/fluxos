@@ -1,0 +1,138 @@
+@use '../abstracts/fonts'
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.btn
+	color: $gray
+	border: none
+	font-size: 1em
+	cursor: pointer
+	font-weight: 900
+	padding: 10px 20px
+	@include round(2px)
+	display: inline-block
+	text-transform: capitalize
+	transition: all .5s ease-in-out
+	&:active
+		transition: all .5s ease-in-out
+		transform-origin: center right left
+		background-color: none
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 16%), 0 2px 10px rgb(0, 0, 0, 12%)
+	&:hover
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 16%), 0 2px 10px rgb(0, 0, 0, 12%)
+.btn_lg
+	padding: 15px 25px
+.btn_sm
+	padding: 5px 15px
+.btn_xs
+	font-size: .875em
+	padding: 5px 10px
+.btn_shadow
+	box-shadow: 2px 3px 10px $default
+.link
+	padding: 0
+.round
+	@include round(50px)
+
+// ============= DEFAULT =================	
+
+.info
+	color: $white
+	border: 1px solid $info
+	background-color: $info
+.default
+	color: $white
+	background-color: $default
+	border: 1px solid $default
+.primary
+	color: $white
+	border: 1px solid $primary
+	background-color: $primary
+.success
+	color: $white
+	background-color: $success
+	border: 1px solid $success
+.danger
+	color: $white
+	background-color: $danger
+	border: 1px solid $danger
+.dark
+	color: $white
+	background-color: $dark
+	border: 1px solid $dark
+.warning
+	color: $white
+	background-color: $warning
+	border: 1px solid $warning
+
+// ============= OUTLINE =================
+
+.info_outline
+	color: $info
+	border: 1px solid $info
+	background-color: transparent
+.default_outline
+	color: $default
+	border: 1px solid $default
+	background-color: transparent
+.primary_outline
+	color: $primary
+	border: 1px solid $primary
+	background-color: transparent
+.success_outline
+	color: $success
+	border: 1px solid $success
+	background-color: transparent
+.danger_outline
+	color: $danger
+	border: 1px solid $danger
+	background-color: transparent
+.dark_outline
+	color: $dark
+	border: 1px solid $dark
+	background-color: transparent
+.warning_outline
+	color: $warning
+	border: 1px solid $warning
+	background-color: transparent
+
+// ============= SHADOW =================
+
+.info_shadow
+	color: $info
+	background-colo: $white
+	box-shadow: 2px 3px 10px $default
+.default_shadow
+	color: $default
+	background-color: $white
+	box-shadow: 2px 3px 10px $default
+.primary_shadow
+	color: $primary
+	background-color: $white
+	box-shadow: 2px 3px 10px $default
+.success_shadow
+	color: $success
+	background-color: $white
+	box-shadow: 2px 3px 10px $default
+.danger_shadow
+	color: $danger
+	background-color: $white
+	box-shadow: 2px 3px 10px $default
+.dark_shadow
+	color: $dark
+	background-colo: $white
+	box-shadow: 2px 3px 10px $default
+.warning_shadow
+	color: $warning
+	background-color: $white
+	box-shadow: 2px 3px 10px $default
+
+.btn_fluxus_outline
+	font-weight: bold
+	color: $fluxus_yellow
+	text-transform: capitalize
+	border: 1px solid $fluxus_yellow
+
+.btn_fluxus
+	color: $fluxus_blue
+	background-color: $fluxus_yellow
