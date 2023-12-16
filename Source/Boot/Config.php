@@ -8,7 +8,7 @@ if (strpos($_SERVER['HTTP_HOST'], "localhost")) {
     define("CONF_DB_HOST", "localhost");
     define("CONF_DB_USER", "root");
     define("CONF_DB_PASS", "");
-    define("CONF_DB_NAME", "brilliantmind");
+    define("CONF_DB_NAME", "fullstackphp");
 } else {
     define("CONF_DB_HOST", "localhost");
     define("CONF_DB_USER", "jsbril46_root");
@@ -20,17 +20,17 @@ if (strpos($_SERVER['HTTP_HOST'], "localhost")) {
 /**
  * PROJECT URLs
  */
-define("CONF_URL_BASE", "https://www.fluxus.co.mz");
-define("CONF_URL_TEST", "https://www.localhost/fluxus");
+define("CONF_URL_BASE", "https://www.fluxos.co.mz");
+define("CONF_URL_TEST", "https://www.localhost/fluxos");
 
 /**
  * SITE
  */
-define("CONF_SITE_NAME", "Fluxus");
+define("CONF_SITE_NAME", "Fluxos");
 define("CONF_SITE_TITLE", "O lugar onde a sua empresa ganha destaque");
 define("CONF_SITE_DESC", "Marketplace");
 define("CONF_SITE_LANG", "pt_BR");
-define("CONF_SITE_DOMAIN", "fluxus.co.mz");
+define("CONF_SITE_DOMAIN", "fluxos.co.mz");
 define("CONF_SITE_ADDR_STREET", "");
 define("CONF_SITE_ADDR_NUMBER", "");
 define("CONF_SITE_ADDR_COMPLEMENT", "Cidade de Maputo");
@@ -41,16 +41,16 @@ define("CONF_SITE_ADDR_ZIPCODE", "1103");
 /**
  * SOCIAL
  */
-define("CONF_SOCIAL_TWITTER_CREATOR", "@fluxus");
-define("CONF_SOCIAL_TWITTER_PUBLISHER", "@fluxus");
+define("CONF_SOCIAL_TWITTER_CREATOR", "@fluxos");
+define("CONF_SOCIAL_TWITTER_PUBLISHER", "@fluxos");
 define("CONF_SOCIAL_FACEBOOK_APP", "");
-define("CONF_SOCIAL_FACEBOOK_PAGE", "fluxus");
-define("CONF_SOCIAL_FACEBOOK_AUTHOR", "fluxus");
+define("CONF_SOCIAL_FACEBOOK_PAGE", "fluxos");
+define("CONF_SOCIAL_FACEBOOK_AUTHOR", "fluxos");
 define("CONF_SOCIAL_GOOGLE_PAGE", "");
 define("CONF_SOCIAL_GOOGLE_AUTHOR", "");
-define("CONF_SOCIAL_INSTAGRAM_PAGE", "fluxus");
-define("CONF_SOCIAL_YOUTUBE_PAGE", "fluxus");
-define("CONF_SOCIAL_LINKEDIN_PAGE", "fluxus");
+define("CONF_SOCIAL_INSTAGRAM_PAGE", "fluxos");
+define("CONF_SOCIAL_YOUTUBE_PAGE", "fluxos");
+define("CONF_SOCIAL_LINKEDIN_PAGE", "fluxos");
 
 /**
  * DATES
@@ -71,8 +71,8 @@ define("CONF_PASSWD_OPTION", ["cost" => 10]);
  */
 define("CONF_VIEW_PATH", __DIR__ . "/../../shared/views");
 define("CONF_VIEW_EXT", "php");
-define("CONF_VIEW_THEME", "fluxus");
-define("CONF_VIEW_ADMIN", "cafeadm");
+define("CONF_VIEW_THEME", "fluxosWeb");
+define("CONF_VIEW_ADMIN", "fluxosAdmin");
 
 /**
  * UPLOAD

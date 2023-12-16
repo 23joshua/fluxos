@@ -23,21 +23,21 @@ if (strpos(url(), "localhost")) {
     /**
      * JS
      */
-    $minJS = new MatthiasMullie\Minify\JS();
-    $minJS->add(__DIR__ . "/../../../shared/scripts/jquery.min.js");
-    $minJS->add(__DIR__ . "/../../../shared/scripts/jquery.form.js");
-    $minJS->add(__DIR__ . "/../../../shared/scripts/jquery-ui.js");
-    $minJS->add(__DIR__ . "/../../../shared/scripts/tracker.js");
+    // $minJS = new MatthiasMullie\Minify\JS();
+    // $minJS->add(__DIR__ . "/../../../shared/scripts/jquery.min.js");
+    // $minJS->add(__DIR__ . "/../../../shared/scripts/jquery.form.js");
+    // $minJS->add(__DIR__ . "/../../../shared/scripts/jquery-ui.js");
+    // $minJS->add(__DIR__ . "/../../../shared/scripts/tracker.js");
 
     //theme CSS
-    $jsDir = scandir(__DIR__ . "/../../../themes/" . CONF_VIEW_THEME . "/assets/js");
-    foreach ($jsDir as $js) {
-        $jsFile = __DIR__ . "/../../../themes/" . CONF_VIEW_THEME . "/assets/js/{$js}";
-        if (is_file($jsFile) && pathinfo($jsFile)['extension'] == "js") {
-            $minJS->add($jsFile);
-        }
-    }
+    // $jsDir = scandir(__DIR__ . "/../../../themes/" . CONF_VIEW_THEME . "/assets/js");
+    // foreach ($jsDir as $js) {
+    //     $jsFile = __DIR__ . "/../../../themes/" . CONF_VIEW_THEME . "/assets/js/{$js}";
+    //     if (is_file($jsFile) && pathinfo($jsFile)['extension'] == "js") {
+    //         $minJS->add($jsFile);
+    //     }
+    // }
 
     //Minify JS
-    $minJS->minify(__DIR__ . "/../../../themes/" . CONF_VIEW_THEME . "/assets/scripts.js");
+    // $minJS->minify(__DIR__ . "/../../../themes/" . CONF_VIEW_THEME . "/assets/scripts.js");
 }

@@ -123,8 +123,14 @@ abstract class Model
     public function find(?string $terms = null, ?string $params = null, string $columns = "*")
     {
         if ($terms) {
+            // Se $terms não for nulo, construa uma consulta com uma cláusula WHERE
             $this->query = "SELECT {$columns} FROM {$this->entity} WHERE {$terms}";
-            parse_str($params, $this->params);
+
+            // Se $params não for nulo, analise os parâmetros da string e atribua a $this->params
+            if ($params !== null) {
+                parse_str($params, $this->params);
+            }
+
             return $this;
         }
 
@@ -137,11 +143,11 @@ abstract class Model
      * @param string $columns
      * @return null|mixed|Model
      */
-    public function findById(int $id, string $columns = "*"): ?Model
-    {
-        $find = $this->find("id = :id", "id={$id}", $columns);
-        return $find->fetch();
-    }
+    // public function findById(int $id, string $columns = "*"): ?Model
+    // {
+    //     $find = $this->find("id = :id", "id={$id}", $columns);
+    //     return $find->fetch();
+    // }
 
     /**
      * @param string $columnOrder
@@ -180,7 +186,14 @@ abstract class Model
     public function fetch(bool $all = false)
     {
         try {
-            $stmt = Connect::getInstance()->prepare($this->query . $this->order . $this->limit . $this->offset);
+            $pdoInstance = Connect::getInstance();
+
+            if (!$pdoInstance) {
+                // Adicione um log ou mensagem de erro, se necessário
+                return null;
+            }
+
+            $stmt = $pdoInstance->prepare($this->query . $this->order . $this->limit . $this->offset);
             $stmt->execute($this->params);
 
             if (!$stmt->rowCount()) {
@@ -216,13 +229,20 @@ abstract class Model
     protected function create(array $data): ?int
     {
         try {
+            $pdoInstance = Connect::getInstance();
+
+            if (!$pdoInstance) {
+                // Adicione um log ou mensagem de erro, se necessário
+                return null;
+            }
+
             $columns = implode(", ", array_keys($data));
             $values = ":" . implode(", :", array_keys($data));
 
-            $stmt = Connect::getInstance()->prepare("INSERT INTO {$this->entity} ({$columns}) VALUES ({$values})");
+            $stmt = $pdoInstance->prepare("INSERT INTO {$this->entity} ({$columns}) VALUES ({$values})");
             $stmt->execute($this->filter($data));
 
-            return Connect::getInstance()->lastInsertId();
+            return $pdoInstance->lastInsertId();
         } catch (\PDOException $exception) {
             $this->fail = $exception;
             return null;
@@ -283,7 +303,7 @@ abstract class Model
             }
         }
 
-        $this->data = $this->findById($id)->data();
+        // $this->data = $this->findById($id)->data();
         return true;
     }
 
@@ -304,8 +324,8 @@ abstract class Model
     {
         try {
             $stmt = Connect::getInstance()->prepare("DELETE FROM {$this->entity} WHERE {$terms}");
-            if ($params) {
-                parse_str($params, $params);
+            if ($params !== null) {
+                parse_str($params, $this->$params);
                 $stmt->execute($params);
                 return true;
             }

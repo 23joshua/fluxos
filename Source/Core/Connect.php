@@ -35,6 +35,7 @@ class Connect
                     self::OPTIONS
                 );
             } catch (\PDOException $exception) {
+                echo "Erro de Conexão: " . $exception->getMessage();
                 redirect("/ops/problemas");
             }
         }
